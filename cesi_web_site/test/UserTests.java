@@ -16,14 +16,14 @@ public class UserTests extends UnitTest
     public void createAndRetrieveUser() 
 	{
         // Create a new user and save it
-        new User("bob@gmail.com", "secret", "Bob", Role.findOrCreateByName("Admin")).save();
+        new User("toto@toto.com", "secret", "Toto", Role.findOrCreateByName("Admin")).save();
 
         // Retrieve the user with bob username
-        User bob = User.find("byEmail", "bob@gmail.com").first();
+        User bob = User.find("byEmail", "toto@toto.com").first();
 
         // Test 
         assertNotNull(bob);
-        assertEquals("Bob", bob.fullname);
+        assertEquals("Toto", bob.fullname);
     }
 	
 	@Test
