@@ -1,0 +1,9 @@
+Points Fonctionnels du projet web : 
+
+-Session (rare, ril, msi, ..)
+-Catégories(réseau, dev,...)
+-Down/Up load de fichiers
+-Contribution (SuperUser, Contributeur, visiteur, visiteur Authentifié)
+	-Gestion des utilisateurs
+-Gestion des articles/Pages profil
+-BackOffice
