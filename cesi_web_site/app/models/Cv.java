@@ -9,21 +9,26 @@ import play.data.validation.*;
 @Entity
 public class Cv extends Model
 {
-    public String professionalExperience;
+    @Required
+    public String title;
     
-    public String schooling;
+    @OneToMany(mappedBy="cv", cascade=CascadeType.ALL)
+    public List<Block> blocks;
     
-    public String recreation;
+    @OneToMany(mappedBy="cv", cascade=CascadeType.ALL)
+    public List<File> files;
     
-    public String customContent;
+    @OneToOne
+    public User user;
+    
+    @ManyToMany(cascade=CascadeType.PERSIST)
+    public List<Category> categories;
+    
+    @ManyToMany(cascade=CascadeType.PERSIST)
+    public List<Tag> tags;
 
-    public Cv(String professionalExperience, String schooling, String recreation, String customContent) 
+    public Cv(String title) 
     {
-        this.professionalExperience = professionalExperience;
-        this.schooling = schooling;
-        this.recreation = recreation;
-        this.customContent = customContent;
+        this.title = title;
     }
-    
-    
 }

@@ -12,6 +12,9 @@ public class Role extends Model
     @Required
     public String name;
     
+    @OneToMany(mappedBy="role", cascade=CascadeType.ALL)
+    public List<User> users;
+    
     private Role(String name) 
     {
         this.name = name;
@@ -28,7 +31,7 @@ public class Role extends Model
         return role;
     }
     
-    
+    @Override
     public String toString() 
     {
         return name;

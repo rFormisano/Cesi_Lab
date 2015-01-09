@@ -7,13 +7,14 @@ import play.db.jpa.*;
 import play.data.validation.*;
  
 @Entity
-public class Comment extends Model {
+public class Comment extends Model 
+{
  
     @Required
     public String author;
     
     @Required
-    public Date postedAt;
+    public Date commentedAt;
      
     @Lob
     @Required
@@ -24,14 +25,20 @@ public class Comment extends Model {
     @Required
     public Post post;
     
-    public Comment(Post post, String author, String content) {
+    @ManyToOne
+    public User user;
+    
+    public Comment(Post post, String author, String content) 
+    {
         this.post = post;
         this.author = author;
         this.content = content;
-        this.postedAt = new Date();
+        this.commentedAt = new Date();
     }
     
-    public String toString() {
+    @Override
+    public String toString() 
+    {
         return content.length() > 50 ? content.substring(0, 50) + "..." : content;
     }
  

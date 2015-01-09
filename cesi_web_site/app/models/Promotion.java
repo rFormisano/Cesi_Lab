@@ -16,6 +16,9 @@ public class Promotion extends Model
     @Required
     @As("yyyy")
     public Date date;
+    
+    @OneToMany(mappedBy="promotion", cascade=CascadeType.ALL)
+    public List<User> users;
 
     private Promotion(String name, Date date) 
     {
@@ -34,6 +37,7 @@ public class Promotion extends Model
         return promotion;
     }
     
+    @Override
     public String toString() 
     {
         return name + " " + new SimpleDateFormat("yy").format(date);

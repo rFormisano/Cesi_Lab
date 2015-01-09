@@ -18,30 +18,47 @@ Role(OtherMember):
 Promotion(PromoRil):
     name:           RIL
     date:           2013-01-01
+    
+Promotion(PromoRare):
+    name:           RARE
+    date:           2013-01-01
 
 Site(MTP):
-    city:           montpellier
+    city:           Montpellier
 
 Site(TLS):
-    city:           toulouse
+    city:           Toulouse
+  
+User(superAdmin):
+    email:          super@admin.com
+    password:       admin
+    firstName:      Super
+    lastName:       Admin
+    role:           SuperAdmin
+    site:           MTP
     
-Site(NON):
-    city:           none
-    
+User(admin):
+    email:          admin@admin.com
+    password:       admin
+    firstName:      Admin
+    lastName:       Admin
+    role:           Admin
+    site:           MTP
 
 User(bob):
     email:          bob@viacesi.fr
     password:       secret
     firstName:      Bob
     lastName:       Bob
-    role:           SuperAdmin
+    role:           CesiMember
+    site:           TLS
 
 User(jeff):
     email:          jeff@viacesi.fr
     password:       secret
     firstName:      Jeff 
     lastName:       Jeff  
-    role:           Admin
+    role:           OtherMember
 
 User(paul):
     email:          paul@viacesi.fr
@@ -49,23 +66,40 @@ User(paul):
     firstName:      Paul 
     lastName:       Paul
     role:           Prof
+    site:           TLS
     
 User(joann):
     email:          joann.jousselin@gmail.com
     password:       jj
     firstName:      Joann
     lastName:       Jousselin
-    role:           SuperAdmin
+    role:           CesiMember
     promotion:      PromoRil
+    site:           MTP
+    
+User(toto):
+    email:          toto@gmail.com
+    password:       tt
+    firstName:      Toto
+    lastName:       Toto
+    role:           CesiMember
+    promotion:      PromoRare
+    site:           MTP
 
 Category(DEV):
-    name:           developpement
+    name:           Developpement
 
 Category(SYS):
-    name:           systeme
+    name:           Systeme
     
 Category(RES):
-    name:           reseau
+    name:           Reseau
+    
+Category(RH):
+    name:           Ressources humaines
+    
+Category(BAT):
+    name:           Batiment
     
 Tag(play):
     name:           Play

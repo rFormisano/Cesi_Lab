@@ -6,15 +6,15 @@ import models.*;
 public class CommentTests extends UnitTest 
 {
     @Before
-	@After
+    @After
     public void setup() 
-	{
+    {
         Fixtures.deleteAll();
     }
 	
-	@Test
+    @Test
     public void postComments() 
-	{
+    {
         // Create a new user and save it
         User bob = new User("bob@gmail.com", "secret", "Bob", "Bob", Role.findOrCreateByName("Admin")).save();
 
@@ -35,18 +35,18 @@ public class CommentTests extends UnitTest
         assertNotNull(firstComment);
         assertEquals("Jeff", firstComment.author);
         assertEquals("Nice post", firstComment.content);
-        assertNotNull(firstComment.postedAt);
+        assertNotNull(firstComment.commentedAt);
 
         Comment secondComment = bobPostComments.get(1);
         assertNotNull(secondComment);
         assertEquals("Tom", secondComment.author);
         assertEquals("I knew that !", secondComment.content);
-        assertNotNull(secondComment.postedAt);
+        assertNotNull(secondComment.commentedAt);
     }
     
     @Test
     public void useTheCommentsRelation() 
-	{
+    {
         // Create a new user and save it
         User bob = new User("bob@gmail.com", "secret", "Bob", "Bob", Role.findOrCreateByName("Admin")).save();
 

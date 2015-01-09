@@ -45,6 +45,12 @@
                     <li class="${request.controller == 'Promotions' ? 'selected' : ''}">
                         <a href="@{Promotions.list()}">Promotions</a>
                     </li>
+                    <li class="${request.controller == 'Sites' ? 'selected' : ''}">
+                        <a href="@{Sites.list()}">Sites</a>
+                    </li>
+                    <li class="${request.controller == 'Categorys' ? 'selected' : ''}">
+                        <a href="@{Categorys.list()}">Categories</a>
+                    </li>
                 #{/secure.check}
             </ul>
             

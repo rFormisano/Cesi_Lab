@@ -33,6 +33,9 @@ public class User extends Model
     
     @ManyToOne
     public Site site;
+    
+    @OneToOne
+    public Cv cv;
 	
     public User(String email, String password, String firstName, String lastName, Role role) 
     {
