@@ -1,0 +1,7 @@
+
+require:
+	- play
+	- play -> crud
+	- play -> secure
+	- play -> db
+	- play -> pdf
