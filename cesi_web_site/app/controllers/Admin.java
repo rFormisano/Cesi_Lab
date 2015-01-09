@@ -39,7 +39,7 @@ public class Admin extends Controller {
 		
 		if (fichier != null)
 		{
-			fichier.renameTo(new File("/tmp/essaiFichier"));
+			fichier.renameTo(new File("./tmp/essaiFichier"));
 		}
 		
         if(id == null) {

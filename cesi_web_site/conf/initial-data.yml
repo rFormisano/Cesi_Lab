@@ -9,6 +9,12 @@ Role(Admin):
 Role(Prof):
     name:           Prof
 
+Role(CesiMember):
+    name:           CesiMember
+    
+Role(OtherMember):
+    name:           OtherMember
+
 User(bob):
     email:          bob@viacesi.fr
     password:       secret
@@ -26,6 +32,12 @@ User(paul):
     password:       secret
     fullname:       Paul
     role:           Prof
+    
+User(joann):
+    email:          joann.jousselin@gmail.com
+    password:       jj
+    fullname:       Joann
+    role:           SuperAdmin
 
 Tag(play):
     name:           Play
