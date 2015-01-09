@@ -19,6 +19,16 @@ Promotion(PromoRil):
     name:           RIL
     date:           2013-01-01
 
+Site(MTP):
+    city:           montpellier
+
+Site(TLS):
+    city:           toulouse
+    
+Site(NON):
+    city:           none
+    
+
 User(bob):
     email:          bob@viacesi.fr
     password:       secret
@@ -48,17 +58,30 @@ User(joann):
     role:           SuperAdmin
     promotion:      PromoRil
 
+Category(DEV):
+    name:           developpement
+
+Category(SYS):
+    name:           systeme
+    
+Category(RES):
+    name:           reseau
+    
 Tag(play):
     name:           Play
+    category:       DEV
     
 Tag(architecture):
     name:           Architecture
+    category:       DEV
     
 Tag(test):
     name:           Test
+    category:       DEV
     
 Tag(mvc):
-    name:           MVC    
+    name:           MVC
+    category:       DEV
     
 Post(firstBobPost):
     title:          About the model layer

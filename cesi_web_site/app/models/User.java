@@ -30,6 +30,9 @@ public class User extends Model
     
     @ManyToOne
     public Promotion promotion;
+    
+    @ManyToOne
+    public Site site;
 	
     public User(String email, String password, String firstName, String lastName, Role role) 
     {
@@ -48,6 +51,17 @@ public class User extends Model
         this.lastName = lastName;
         this.role = role;
         this.promotion = promotion;
+    }
+    
+    public User(String email, String password, String firstName, String lastName, Role role, Promotion promotion, Site site) 
+    {
+        this.email = email;
+        this.password = password;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.role = role;
+        this.promotion = promotion;
+        this.site = site;
     }
     
     public static User connect(String email, String password) 

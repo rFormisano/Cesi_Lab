@@ -1,0 +1,10 @@
+Page principale : 
+- titre
+- categories
+- tags
+- login
+- actu
+- rechercher
+- filtres
+- contenu dynamique
+- footer 

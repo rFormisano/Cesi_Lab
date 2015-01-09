@@ -12,8 +12,16 @@ public class Tag extends Model implements Comparable<Tag> {
     @Required
     public String name;
     
+    @ManyToOne
+    public Category category;
+    
     private Tag(String name) {
         this.name = name;
+    }
+    
+    private Tag(String name, Category category) {
+        this.name = name;
+        this.category = category;
     }
     
     public static Tag findOrCreateByName(String name) {
