@@ -14,30 +14,39 @@ Role(CesiMember):
     
 Role(OtherMember):
     name:           OtherMember
+    
+Promotion(PromoRil):
+    name:           RIL
+    date:           2013-01-01
 
 User(bob):
     email:          bob@viacesi.fr
     password:       secret
-    fullname:       Bob
+    firstName:      Bob
+    lastName:       Bob
     role:           SuperAdmin
 
 User(jeff):
     email:          jeff@viacesi.fr
     password:       secret
-    fullname:       Jeff   
+    firstName:      Jeff 
+    lastName:       Jeff  
     role:           Admin
 
 User(paul):
     email:          paul@viacesi.fr
     password:       secret
-    fullname:       Paul
+    firstName:      Paul 
+    lastName:       Paul
     role:           Prof
     
 User(joann):
     email:          joann.jousselin@gmail.com
     password:       jj
-    fullname:       Joann
+    firstName:      Joann
+    lastName:       Jousselin
     role:           SuperAdmin
+    promotion:      PromoRil
 
 Tag(play):
     name:           Play

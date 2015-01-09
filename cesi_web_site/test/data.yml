@@ -12,13 +12,15 @@ Role(Prof):
 User(bob):
     email:          bob@gmail.com
     password:       secret
-    fullname:       Bob
+    firstName:      Bob
+    lastName:       Bob
     role:           SuperAdmin
 
 User(jeff):
     email:          jeff@gmail.com
     password:       secret
-    fullname:       Jeff   
+    firstName:      Jeff 
+    lastName:       Jeff
     role:           Admin
 
 Post(firstBobPost):

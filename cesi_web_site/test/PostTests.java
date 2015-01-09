@@ -16,7 +16,7 @@ public class PostTests extends UnitTest
     public void createPost() 
 	{
         // Create a new user and save it
-        User bob = new User("bob@gmail.com", "secret", "Bob", Role.findOrCreateByName("Admin")).save();
+        User bob = new User("bob@gmail.com", "secret", "Bob", "Bob", Role.findOrCreateByName("Admin")).save();
 
         // Create a new post
         new Post(bob, "My first post", "Hello world").save();

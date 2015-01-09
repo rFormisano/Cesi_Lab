@@ -6,15 +6,15 @@ import models.*;
 public class BasicTest extends UnitTest 
 {
     @Before
-	@After
+    @After
     public void setup() 
-	{
+    {
         Fixtures.deleteAll();
     }
     
     @Test
     public void fullTest() 
-	{
+    {
         Fixtures.load("data.yml");
 
         // Count things
@@ -52,9 +52,9 @@ public class BasicTest extends UnitTest
     
     @Test
     public void testTags() 
-	{
+    {
         // Create a new user and save it
-        User bob = new User("bob@gmail.com", "secret", "Bob", Role.findOrCreateByName("Admin")).save();
+        User bob = new User("bob@gmail.com", "secret", "Bob", "Bob", Role.findOrCreateByName("Admin")).save();
 
         // Create a new post
         Post bobPost = new Post(bob, "My first post", "Hello world").save();
