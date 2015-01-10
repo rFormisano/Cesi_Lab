@@ -9,7 +9,7 @@ import play.db.jpa.*;
  * @author joann
  */
 @Entity
-public class File extends Model
+public class ServerFile extends Model
 {
     public String originalName;
     
@@ -23,12 +23,16 @@ public class File extends Model
     @ManyToOne
     public Cv cv;
 
-    public File(String originalName, String serverName, String path) 
+    public ServerFile(String originalName, String serverName, String path) 
     {
         this.originalName = originalName;
         this.serverName = serverName;
         this.path = path;
     }
     
-    
+    @Override
+    public String toString()
+    {
+        return this.originalName;
+    }
 }

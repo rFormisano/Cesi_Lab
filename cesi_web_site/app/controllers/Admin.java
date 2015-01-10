@@ -1,11 +1,11 @@
 package controllers;
  
-import play.*;
+
 import play.mvc.*;
-import play.data.validation.*;
- 
+
 import java.util.*;
 import java.io.File;
+import java.text.SimpleDateFormat;
  
 import models.*;
  
@@ -43,11 +43,6 @@ public class Admin extends Controller
     {
         Post post;
 		
-        if (fichier != null)
-        {
-                fichier.renameTo(new File("./tmp/essaiFichier"));
-        }
-		
         if(id == null) 
         {
             // Create post
@@ -62,6 +57,7 @@ public class Admin extends Controller
             post.content = content;
             post.tags.clear();
         }
+        
         // Set tags list
         for(String tag : tags.split("\\s+")) 
         {
@@ -70,12 +66,28 @@ public class Admin extends Controller
                 post.tags.add(Tag.findOrCreateByName(tag));
             }
         }
+        
+        if (fichier != null)
+        {
+            // TODO JJ : je ne retrouve pas le fichier physiquement sur ma machine
+            //           mais les infos en base sont bien enregistrés
+            String fileName = fichier.getName();
+            String date = new SimpleDateFormat("yyyy-MM-dd-hhmmss").format(new Date());
+            String serverFileName = date + fileName;
+            ServerFile file = new ServerFile(fileName, serverFileName, "./tmp/");
+            post.files.add(file);
+            file.post = post;
+            fichier.renameTo(new File(file.path + file.serverName));
+            file.save();
+        }
+        
         // Validate
         validation.valid(post);
         if(validation.hasErrors()) 
         {
             render("@form", post);
         }
+        
         // Save
         post.save();
         index();

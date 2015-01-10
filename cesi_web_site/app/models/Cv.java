@@ -16,7 +16,7 @@ public class Cv extends Model
     public List<Block> blocks;
     
     @OneToMany(mappedBy="cv", cascade=CascadeType.ALL)
-    public List<File> files;
+    public List<ServerFile> files;
     
     @OneToOne
     public User user;

@@ -30,7 +30,7 @@ public class Post extends Model
     public List<Comment> comments;
     
     @OneToMany(mappedBy="post", cascade=CascadeType.ALL)
-    public List<File> files;
+    public List<ServerFile> files;
     
     @ManyToMany(cascade=CascadeType.PERSIST)
     public Set<Tag> tags;
