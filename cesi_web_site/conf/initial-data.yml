@@ -31,7 +31,7 @@ Site(TLS):
   
 User(superAdmin):
     email:          super@admin.com
-    password:       admin
+    password:       21232f297a57a5a743894a0e4a801fc3
     firstName:      Super
     lastName:       Admin
     role:           SuperAdmin
@@ -39,7 +39,7 @@ User(superAdmin):
     
 User(admin):
     email:          admin@admin.com
-    password:       admin
+    password:       21232f297a57a5a743894a0e4a801fc3
     firstName:      Admin
     lastName:       Admin
     role:           Admin
@@ -47,7 +47,7 @@ User(admin):
 
 User(bob):
     email:          bob@viacesi.fr
-    password:       secret
+    password:       21232f297a57a5a743894a0e4a801fc3
     firstName:      Bob
     lastName:       Bob
     role:           CesiMember
@@ -55,31 +55,22 @@ User(bob):
 
 User(jeff):
     email:          jeff@viacesi.fr
-    password:       secret
+    password:       21232f297a57a5a743894a0e4a801fc3
     firstName:      Jeff 
     lastName:       Jeff  
     role:           OtherMember
 
 User(paul):
     email:          paul@viacesi.fr
-    password:       secret
+    password:       21232f297a57a5a743894a0e4a801fc3
     firstName:      Paul 
     lastName:       Paul
     role:           Prof
     site:           TLS
-    
-User(joann):
-    email:          joann.jousselin@gmail.com
-    password:       jj
-    firstName:      Joann
-    lastName:       Jousselin
-    role:           CesiMember
-    promotion:      PromoRil
-    site:           MTP
-    
+   
 User(toto):
     email:          toto@gmail.com
-    password:       tt
+    password:       21232f297a57a5a743894a0e4a801fc3
     firstName:      Toto
     lastName:       Toto
     role:           CesiMember

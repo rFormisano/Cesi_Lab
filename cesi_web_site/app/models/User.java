@@ -3,8 +3,9 @@ package models;
 import java.util.*;
 import javax.persistence.*;
  
-import play.db.jpa.*;
 import play.data.validation.*;
+import play.db.jpa.*;
+import play.libs.Codec;
  
 @Entity
 public class User extends Model 
@@ -36,16 +37,20 @@ public class User extends Model
     
     @OneToOne
     public Cv cv;
+    
+    public String needConfirmation;
 	
     public User(String email, String password, String firstName, String lastName, Role role) 
     {
         this.email = email;
-        this.password = password;
+        this.password = Codec.hexMD5(password);
         this.firstName = firstName;
         this.lastName = lastName;
         this.role = role;
+        this.needConfirmation = Codec.UUID();
     }
     
+    /*
     public User(String email, String password, String firstName, String lastName, Role role, Promotion promotion) 
     {
         this.email = email;
@@ -66,10 +71,11 @@ public class User extends Model
         this.promotion = promotion;
         this.site = site;
     }
+    */
     
     public static User connect(String email, String password) 
     {
-        return find("byEmailAndPassword", email, password).first();
+        return find("byEmailAndPassword", email, Codec.hexMD5(password)).first();
     }
 	
     public static boolean checkRole(String email, String rolename)
@@ -79,6 +85,27 @@ public class User extends Model
             "select u from User u where u.email = ? and u.role in " +
             "(select r from Role r where id <= (select r2.id from Role r2 where name = ?))", email, rolename
         ).fetch().size() > 0;
+    }
+    
+    
+    public boolean checkPassword(String password) 
+    {
+        return this.password.equals(Codec.hexMD5(password));
+    }
+    
+    public static User findByEmail(String email) 
+    {
+        return find("email", email).first();
+    }
+
+    public static User findByRegistrationUUID(String uuid) 
+    {
+        return find("needConfirmation", uuid).first();
+    }
+
+    public static boolean isEmailAvailable(String email) 
+    {
+        return findByEmail(email) == null;
     }
     
     @Override

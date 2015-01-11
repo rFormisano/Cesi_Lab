@@ -9,21 +9,24 @@ import play.cache.*;
 import java.util.*;
 import models.*;
  
-public class Application extends Controller {
-    
+public class Application extends Controller 
+{
     @Before
-    static void addDefaults() {
+    static void addDefaults() 
+    {
         renderArgs.put("blogTitle", Play.configuration.getProperty("blog.title"));
         renderArgs.put("blogBaseline", Play.configuration.getProperty("blog.baseline"));
     }
  
-    public static void index() {
+    public static void index() 
+    {
         Post frontPost = Post.find("order by postedAt desc").first();
         List<Post> olderPosts = Post.find("order by postedAt desc").from(1).fetch(10);
         render(frontPost, olderPosts);
     }
     
-    public static void show(Long id) {
+    public static void show(Long id) 
+    {
         Post post = Post.findById(id);
         String randomID = Codec.UUID();
         render(post, randomID);
@@ -37,10 +40,12 @@ public class Application extends Controller {
         String randomID) 
     {
         Post post = Post.findById(postId);
-        if(!Play.id.equals("test")) {
+        if(!Play.id.equals("test")) 
+        {
             validation.equals(code, Cache.get(randomID)).message("Invalid code. Please type it again");
         }
-        if(validation.hasErrors()) {
+        if(validation.hasErrors()) 
+        {
             render("Application/show.html", post, randomID);
         }
         post.addComment(author, content);
@@ -49,16 +54,17 @@ public class Application extends Controller {
         show(postId);
     }
     
-    public static void captcha(String id) {
+    public static void captcha(String id) 
+    {
         Images.Captcha captcha = Images.captcha();
         String code = captcha.getText("#E4EAFD");
         Cache.set(id, code, "30mn");
         renderBinary(captcha);
     }
     
-    public static void listTagged(String tag) {
+    public static void listTagged(String tag) 
+    {
         List<Post> posts = Post.findTaggedWith(tag);
         render(tag, posts);
     }
- 
 }
