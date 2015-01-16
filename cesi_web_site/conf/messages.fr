@@ -1,0 +1,77 @@
+# You can specialize this file for each language.
+# For exemple, for french create a messages.fr file
+#
+
+title=Titre
+content=Contenu
+postedAt=Posté à
+author=Auteur
+post=Post lié
+tags=Balises
+name=Nom commun
+email=Email
+password=Mot de passe
+fullname=Nom complet
+isAdmin=L'utilisateur est un administrateur
+
+form.post.write = Ecrire un nouveau sujet
+form.post.edit = Editer le sujet
+form.post.title = Titre du sujet : 
+form.post.publish = Publier ce sujet sur le site
+form.write = Ecrire ici : 
+form.tag.write = Saisir des mots clés : 
+form.file.choose = Choisir un fichier : 
+form.error.correct = Veuillez corriger ces erreurs.
+
+
+secure.title=
+secure.username=Identifiant :
+secure.password=Mot de passe :
+secure.remember=Se souvenir de moi
+secure.signin=Se connecter
+secure.error=Oops, identifiant ou mot de passe invalide.
+secure.logout=Vous avez été déconnecté.
+
+crud.title=Administration
+crud.home=Accueil
+crud.blank=Nouveau
+crud.index.title=Choisir l'objet à éditer
+crud.index.objectType=Type de l'object
+crud.index.action=
+crud.index.add=Ajouter
+crud.add=Ajouter &{%s}
+crud.list.title=&{%s}
+crud.list.size=%d &{%s}
+crud.list.totalSize=%d total
+crud.pagination.previous=« Précédent
+crud.pagination.next=Suivant »
+crud.pagination.last=Dernier »»
+crud.pagination.first=«« Premier
+crud.show.title=Editer &{%s}
+crud.save=Sauvegarder
+crud.saveAndContinue=Sauvegarder et continuer la modification
+crud.cancel=Annuler
+crud.hasErrors=Veuillez corriger les arabes
+crud.blank.title=Ajouter &{%s}
+crud.saveAndAddAnother=Sauvegarder et créer un autre
+crud.delete=Supprimer &{%s}
+crud.created=Le &{%s} a été créée
+crud.saved=Le &{%s} a été sauvegardé
+crud.deleted=Le &{%s} a été supprimé
+crud.delete.error=Impossible de supprimer cet objeet
+crud.search=Recherche
+crud.none=(Aucun)
+crud.selectValue=(Veuillez sélectionner une valeur)
+
+crud.help.required=Requis.
+crud.help.minlength=La taille minimale est %d.
+crud.help.maxlength=La taille maximale est %d.
+crud.help.email=Adresse email valide.
+crud.help.dateformat=&{%s} format.
+crud.help.numeric=Numérique.
+crud.help.min=Doit être supérieur à %d.
+crud.help.future=Dans le futur.
+crud.help.past=Dans le passé.
+crud.help.after=Après %s.
+crud.help.before=Avant %s.
+crud.help.range=Entre %d et %d

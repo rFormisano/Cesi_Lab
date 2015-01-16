@@ -38,6 +38,8 @@ public class User extends Model
     @OneToOne
     public Cv cv;
     
+    public String favoriteLanguage;
+    
     public String needConfirmation;
 	
     public User(String email, String password, String firstName, String lastName, Role role) 
