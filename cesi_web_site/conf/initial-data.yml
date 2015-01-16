@@ -1,20 +1,61 @@
 # Test data
 
+Permission(Comment):
+    name:           Comment
+
+Permission(EditProfile):
+    name:           EditProfile  
+
+Permission(ManagePage):
+    name:           ManagePage  
+
+Permission(ManagePromo):
+    name:           ManagePromo  
+
+Permission(ManageCategory):
+    name:           ManageCategory  
+
+Permission(ManageComment):
+    name:           ManageComment  
+
+Permission(GlobalManagement):
+    name:           GlobalManagement  
+
 Role(SuperAdmin):
     name:           SuperAdmin
+    permissions:     
+                    - GlobalManagement
 
 Role(Admin):
     name:           Admin
+    permissions:     
+                    - ManageComment
+                    - ManageCategory
+                    - ManagePromo
+                    - ManagePage
+                    - EditProfile
+                    - Comment
 
 Role(Prof):
     name:           Prof
+    permissions:     
+                    - ManagePromo
+                    - ManagePage
+                    - EditProfile
+                    - Comment    
 
 Role(CesiMember):
     name:           CesiMember
-    
+    permissions:     
+                    - ManagePage
+                    - EditProfile
+                    - Comment 
+                    
 Role(OtherMember):
     name:           OtherMember
-    
+    permissions:     
+                    - Comment
+                    
 Promotion(PromoRil):
     name:           RIL
     date:           2013-01-01

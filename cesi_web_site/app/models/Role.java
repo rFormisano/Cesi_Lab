@@ -15,6 +15,9 @@ public class Role extends Model
     @OneToMany(mappedBy="role", cascade=CascadeType.ALL)
     public List<User> users;
     
+    @ManyToMany
+    public List<Permission> permissions;
+    
     private Role(String name) 
     {
         this.name = name;
