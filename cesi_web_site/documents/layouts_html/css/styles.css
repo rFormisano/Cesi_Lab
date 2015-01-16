@@ -1,0 +1,57 @@
+@font-face {
+font-family: 'robotoBold';
+src: url('../font/Roboto-Bold.ttf');
+}
+
+@font-face {
+font-family: 'roboto';
+src: url('../font/Roboto-Light.ttf');
+}
+
+@font-face {
+font-family: 'robotoMedium';
+src: url('../font/Roboto-Medium.ttf');
+}
+
+@font-face {
+font-family: 'robotoLight';
+src: url('../font/Roboto-Light.ttf');
+}
+
+@font-face {
+font-family: 'robotoThin';
+src: url('../font/Roboto-Thin.ttf');
+}
+
+body {
+	background-color: #fff;
+	font-family: 'roboto';
+	margin: 0;
+	padding: 0;
+	color : #444;
+}
+table {
+	border: 2px solid #aaa;
+	border-radius: 5px;
+	border-collapse: collapse;
+}
+table thead tr th, table tfoot tr th, table tbody tr td, table tr td, table tfoot tr td {
+	color : #555;
+	font-size: 1.1em;
+	font-weight: bold;
+}
+.cent{
+	text-align: center;
+	cursor: pointer;
+}
+.main {
+	margin: 0 auto;
+	margin-top:5em;
+	width: 1200px;
+}
+.icon {
+	color: #999;
+}
+.flag {
+	background-color: #ddd;
+}
