@@ -1,6 +1,7 @@
 package controllers;
 
 import models.*;
+int TypeUser;
 
 public class Security extends Secure.Security 
 {
